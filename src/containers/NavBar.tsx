@@ -1,15 +1,23 @@
 import '../styles/containers/NavBar.scss';
 
+// custom components
+import Anchor from '../components/Anchor';
+
+// short components
+const MenuItem = ({ link = '', label = '' }) => {
+  return (
+    <li>
+      <Anchor link={link} label={label} />
+    </li>
+  );
+};
+
 function NavBar() {
   return (
     <nav className={`NavBar__Container`}>
       <h2>Blog de Papus</h2>
       <ul>
-        <li>
-          <a href="http://google.com/" target="_blank">
-            Google
-          </a>
-        </li>
+        <MenuItem link="http://google.com/" label="Google" />
       </ul>
     </nav>
   );
