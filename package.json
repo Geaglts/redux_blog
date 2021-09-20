@@ -8,7 +8,7 @@
     "start:dev": "webpack serve"
   },
   "keywords": [],
-  "author": "",
+  "author": "Miguel Angel Toledo Santiago <geaglts@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "react": "^17.0.2",
@@ -25,7 +25,9 @@
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.3.0",
     "html-webpack-plugin": "^5.3.2",
+    "sass": "^1.41.1",
     "sass-loader": "^12.1.0",
+    "style-loader": "^3.2.1",
     "ts-loader": "^9.2.5",
     "webpack": "^5.53.0",
     "webpack-cli": "^4.8.0",

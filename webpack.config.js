@@ -12,12 +12,12 @@ module.exports = {
   mode: process.env.NODE_ENV || 'development',
   resolve: { extensions: ['.ts', '.tsx', '.js'] },
   devtool: 'source-map',
-  devServer: { port: 5000, historyApiFallback: true },
+  devServer: { port: 3030, historyApiFallback: true },
   module: {
     rules: [
       { test: /\.jsx?$/, exclude: /node_modules/, use: ['babel-loader'] },
       { test: /\.tsx?$/, exclude: /node_modules/, use: ['ts-loader'] },
-      { test: /\.s?css$/, use: ['css-loader', 'sass-loader'] },
+      { test: /\.s?css$/, use: ['style-loader', 'css-loader', 'sass-loader'] },
     ],
   },
   plugins: [

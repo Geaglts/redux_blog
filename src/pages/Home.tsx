@@ -1,9 +1,11 @@
+import Container from '../containers/Container';
+
 function Home() {
   return (
-    <div>
-      <h1>Home</h1>
-      <p>Bienvenido al Home</p>
-    </div>
+    <Container>
+      <h1>Inicio</h1>
+      <p>Espero que encuentres lo que buscas</p>
+    </Container>
   );
 }
 
