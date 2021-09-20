@@ -20,8 +20,14 @@
       align-items: center;
       background-color: $light;
 
+      svg {
+        transition: transform 500ms ease-out;
+        font-size: 16pt;
+      }
+
       svg:hover {
-        transform: scale(2);
+        transition: transform 400ms ease-out;
+        transform: scale(1.5);
         cursor: pointer;
       }
     }

@@ -9,7 +9,6 @@ interface ContainerProps {
 function Container(props: ContainerProps) {
   return (
     <>
-      <NavBar />
       <main className={`Container__Container ${props.classes?.join(' ')}`}>
         {props.children}
       </main>

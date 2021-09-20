@@ -37,23 +37,25 @@ function Home(props: HomeProps) {
       <p>Conoce a todos los papus que forman parte de esto</p>
       {props.loading && <p>Hola</p>}
       {props.error && <ErrorMessage errorMessage={props.error} />}
-      {
+      {!props.error && !props.loading && (
         <Table headers={['id', 'name', 'username', 'website', 'Actions']}>
           {props.users?.map((user) => {
             return (
-              <tr>
+              <tr key={user.id}>
                 <td className="table__data--id">{user.id}</td>
                 <td>{user.name}</td>
                 <td>{user.username}</td>
                 <td>{user.website}</td>
                 <td className="table__data--actions">
-                  <FaEye />
+                  <span>
+                    <FaEye />
+                  </span>
                 </td>
               </tr>
             );
           })}
         </Table>
-      }
+      )}
     </Container>
   );
 }

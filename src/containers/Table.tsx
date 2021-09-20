@@ -10,8 +10,8 @@ function Table(props: TableProps) {
     <table className="Table__Container">
       <thead>
         <tr>
-          {props.headers.map((header) => {
-            return <th>{header}</th>;
+          {props.headers.map((header, key) => {
+            return <th key={key}>{header}</th>;
           })}
         </tr>
       </thead>
