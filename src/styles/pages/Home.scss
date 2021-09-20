@@ -10,8 +10,20 @@
 
     .table__data--id {
       background-color: $primary-light;
-      color: white;
+      color: $light;
       font-weight: 900;
+    }
+
+    .table__data--actions {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      background-color: $light;
+
+      svg:hover {
+        transform: scale(2);
+        cursor: pointer;
+      }
     }
   }
 }

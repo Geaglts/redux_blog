@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
+import { FaEye } from 'react-icons/fa';
 
 // styles
 import '../styles/pages/Home.scss';
@@ -37,7 +38,7 @@ function Home(props: HomeProps) {
       {props.loading && <p>Hola</p>}
       {props.error && <ErrorMessage errorMessage={props.error} />}
       {
-        <Table headers={['id', 'name', 'username', 'website']}>
+        <Table headers={['id', 'name', 'username', 'website', 'Actions']}>
           {props.users?.map((user) => {
             return (
               <tr>
@@ -45,16 +46,9 @@ function Home(props: HomeProps) {
                 <td>{user.name}</td>
                 <td>{user.username}</td>
                 <td>{user.website}</td>
-              </tr>
-            );
-          })}
-          {props.users?.map((user) => {
-            return (
-              <tr>
-                <td className="table__data--id">{user.id}</td>
-                <td>{user.name}</td>
-                <td>{user.username}</td>
-                <td>{user.website}</td>
+                <td className="table__data--actions">
+                  <FaEye />
+                </td>
               </tr>
             );
           })}
