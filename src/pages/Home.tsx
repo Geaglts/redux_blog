@@ -9,14 +9,18 @@ import { getAllUsers } from '../redux/actions/users';
 
 // custom containers
 import Container from '../containers/Container';
+import Table from '../containers/Table';
 
 // custom components
 import ErrorMessage from '../components/ErrorMessage';
 
+// types
+import { User } from '../types';
+
 interface HomeProps {
   loading?: boolean | boolean;
   error?: string | null;
-  users?: Array<object> | null;
+  users?: Array<User> | null;
   getAllUsers?: () => Promise<void> | null;
 }
 
@@ -32,6 +36,30 @@ function Home(props: HomeProps) {
       <p>Conoce a todos los papus que forman parte de esto</p>
       {props.loading && <p>Hola</p>}
       {props.error && <ErrorMessage errorMessage={props.error} />}
+      {
+        <Table headers={['id', 'name', 'username', 'website']}>
+          {props.users?.map((user) => {
+            return (
+              <tr>
+                <td className="table__data--id">{user.id}</td>
+                <td>{user.name}</td>
+                <td>{user.username}</td>
+                <td>{user.website}</td>
+              </tr>
+            );
+          })}
+          {props.users?.map((user) => {
+            return (
+              <tr>
+                <td className="table__data--id">{user.id}</td>
+                <td>{user.name}</td>
+                <td>{user.username}</td>
+                <td>{user.website}</td>
+              </tr>
+            );
+          })}
+        </Table>
+      }
     </Container>
   );
 }

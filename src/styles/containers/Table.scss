@@ -1,0 +1,25 @@
+@import '../colors';
+
+.Table__Container {
+  width: 100%;
+  box-shadow: 2px 2px 10px 1px rgba($primary, 0.2);
+  background-color: white;
+
+  th,
+  td {
+    padding: 10px;
+  }
+
+  th {
+    background-color: $primary;
+    color: white;
+    font-size: 14pt;
+    font-weight: 600;
+  }
+
+  td {
+    text-align: center;
+    font-size: 12pt;
+    background-color: rgba($primary, 0.1);
+  }
+}

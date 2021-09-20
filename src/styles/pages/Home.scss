@@ -1,5 +1,17 @@
+@import '../colors';
+
 .HomePage {
   .ErrorMessage__Component {
     margin-top: 1em;
+  }
+
+  .Table__Container {
+    margin-top: 1em;
+
+    .table__data--id {
+      background-color: $primary-light;
+      color: white;
+      font-weight: 900;
+    }
   }
 }
