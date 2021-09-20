@@ -18,6 +18,7 @@ module.exports = {
       { test: /\.jsx?$/, exclude: /node_modules/, use: ['babel-loader'] },
       { test: /\.tsx?$/, exclude: /node_modules/, use: ['ts-loader'] },
       { test: /\.s?css$/, use: ['style-loader', 'css-loader', 'sass-loader'] },
+      { test: /\.(svg|png)$/, use: ['file-loader'] },
     ],
   },
   plugins: [

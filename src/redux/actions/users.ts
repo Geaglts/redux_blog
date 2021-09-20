@@ -9,9 +9,10 @@ import { DispatchType } from '../../types';
 export const getAllUsers = () => async (dispatch: DispatchType) => {
   dispatch({ type: UserTypes.LOAD });
   try {
+    throw new Error('Soy un nuevo Error');
     const { data } = await axios.get('https://jsonplaceholder.typicode.com/users');
     dispatch({ type: UserTypes.GET_USERS, payload: data });
-  } catch (error) {
-    console.log('holaa');
+  } catch {
+    dispatch({ type: UserTypes.ERROR, payload: 'No se pudieron cargar los usuarios' });
   }
 };

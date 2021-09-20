@@ -7,16 +7,20 @@ import { getAllUsers } from '../redux/actions/users';
 // custom containers
 import Container from '../containers/Container';
 
+// custom components
+import ErrorMessage from '../components/ErrorMessage';
+
 interface HomeProps {
   loading?: boolean | boolean;
-  error?: boolean | null;
+  error?: string | null;
   users?: Array<object> | null;
   getAllUsers?: () => Promise<void> | null;
 }
 
 function Home(props: HomeProps) {
+  const { getAllUsers } = props;
   useEffect(() => {
-    if (props.getAllUsers) props.getAllUsers();
+    if (getAllUsers) getAllUsers();
   }, []);
 
   return (
@@ -24,6 +28,7 @@ function Home(props: HomeProps) {
       <h1>Todos los papus registrados</h1>
       <p>Conoce a todos los papus que forman parte de esto</p>
       {props.loading && <p>Hola</p>}
+      {props.error && <ErrorMessage errorMessage={props.error} />}
     </Container>
   );
 }
