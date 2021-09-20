@@ -1,9 +1,8 @@
-import { ReactElement } from 'react';
 import '../styles/containers/Container.scss';
 import NavBar from './NavBar';
 
 interface ContainerProps {
-  children: ReactElement | Array<ReactElement>;
+  children: any;
   classes?: Array<string>;
 }
 
