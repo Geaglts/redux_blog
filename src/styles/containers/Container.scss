@@ -2,8 +2,8 @@
 
 .Container__Container {
   background-color: $light;
-  color: $dark;
-  height: 100vh;
+  color: $primary;
+  height: calc(100vh - 60px);
   width: 100%;
   padding: 1em;
 }

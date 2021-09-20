@@ -11,11 +11,11 @@ function ErrorMessage(props: ErrorMessageProps) {
   return (
     <div className={`ErrorMessage__Component`}>
       <div>
-        <img src="" alt="Imagen de errror" />
+        <img src={ErrorImage} alt="Imagen de errror" />
       </div>
       <div>
-        <h3>Estamos teniendo problemas una disculpa</h3>
-        <p>Pero no te preocupes estamos trabando en eso 🙌</p>
+        <h3>Estamos teniendo problemas</h3>
+        <p>Pero no te preocupes ya estamos trabando en eso 🙌</p>
         <p>{props.errorMessage}</p>
       </div>
     </div>

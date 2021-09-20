@@ -1,6 +1,9 @@
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
 
+// styles
+import '../styles/pages/Home.scss';
+
 // actions
 import { getAllUsers } from '../redux/actions/users';
 
@@ -24,7 +27,7 @@ function Home(props: HomeProps) {
   }, []);
 
   return (
-    <Container>
+    <Container classes={['HomePage']}>
       <h1>Todos los papus registrados</h1>
       <p>Conoce a todos los papus que forman parte de esto</p>
       {props.loading && <p>Hola</p>}

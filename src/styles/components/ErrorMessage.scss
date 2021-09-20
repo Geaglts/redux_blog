@@ -1,4 +1,47 @@
 @import '../colors';
 
 .ErrorMessage__Component {
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+
+  & > div:first-child {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  & > div:last-child {
+    border-left: 3px solid $secondary;
+    padding: 1em;
+    width: 100% - 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h3 {
+      font-size: 18pt;
+      color: $primary;
+    }
+
+    p:nth-child(2) {
+      color: $primary-light;
+      font-size: 14pt;
+    }
+
+    p:nth-child(3) {
+      margin-top: 5px;
+      border-left: 3px solid $secondary-dark;
+      padding: 10px;
+      font-size: 14pt;
+      color: $secondary;
+      font-weight: 600;
+      background-color: rgba($secondary, 0.1);
+    }
+  }
 }
