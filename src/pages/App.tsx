@@ -9,8 +9,12 @@ function App() {
       <>
         <NavBar />
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/u/:id" component={Profile} />
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/u/:id">
+            <Profile />
+          </Route>
         </Switch>
       </>
     </Router>

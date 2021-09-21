@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { FaEye } from 'react-icons/fa';
 
@@ -28,7 +29,9 @@ interface HomeProps {
 function Home(props: HomeProps) {
   const { getAllUsers } = props;
   useEffect(() => {
-    if (getAllUsers) getAllUsers();
+    if (props.users?.length === 0) {
+      if (getAllUsers) getAllUsers();
+    }
   }, []);
 
   return (
@@ -47,9 +50,9 @@ function Home(props: HomeProps) {
                 <td>{user.username}</td>
                 <td>{user.website}</td>
                 <td className="table__data--actions">
-                  <span>
+                  <Link to={`/u/${user.id}`}>
                     <FaEye />
-                  </span>
+                  </Link>
                 </td>
               </tr>
             );

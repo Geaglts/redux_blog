@@ -1,5 +1,5 @@
 import { render } from 'react-dom';
-import Home from './pages/Home';
+import App from './pages/App';
 import './styles/index.scss';
 
 import { applyMiddleware, createStore } from 'redux';
@@ -11,7 +11,7 @@ const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
 
 render(
   <Provider store={store}>
-    <Home />
+    <App />
   </Provider>,
   document.getElementById('app')
 );
