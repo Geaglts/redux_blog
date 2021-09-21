@@ -51,7 +51,7 @@ function Home(props: HomeProps) {
                 <td>{user.website}</td>
                 <td className="table__data--actions">
                   <Link to={`/u/${user.id}`}>
-                    <FaEye />
+                    <FaEye /> View profile
                   </Link>
                 </td>
               </tr>
