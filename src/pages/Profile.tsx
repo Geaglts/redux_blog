@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { getAllUsers } from '../redux/actions/users';
+import * as usersReducer from '../redux/actions/users';
+import * as publicationsReducer from '../redux/actions/publications';
 // import { useParams } from 'react-router-dom';
 import Container from '../containers/Container';
 
@@ -10,7 +11,7 @@ function Profile(props: any) {
   // const params: { id: string } = useParams();
   console.log(props);
   useEffect(() => {
-    if (!props.users.length) {
+    if (!props.userReducer.users.length) {
       props.getAllUsers();
     }
   }, []);
@@ -27,8 +28,13 @@ function Profile(props: any) {
   );
 }
 
-const mapStateToProps = (reducers: any) => {
-  return reducers.userReducer;
+const mapStateToProps = ({ userReducer, publicationsReducer }: any) => {
+  return { userReducer, publicationsReducer };
 };
 
-export default connect(mapStateToProps, { getAllUsers })(Profile);
+const mapDispatchToProps = {
+  ...usersReducer,
+  ...publicationsReducer,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);
