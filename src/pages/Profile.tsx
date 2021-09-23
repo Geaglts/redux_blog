@@ -1,10 +1,19 @@
+import { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { getAllUsers } from '../redux/actions/users';
 // import { useParams } from 'react-router-dom';
 import Container from '../containers/Container';
 
 import '../styles/pages/Profile.scss';
 
-function Profile() {
+function Profile(props: any) {
   // const params: { id: string } = useParams();
+  console.log(props);
+  useEffect(() => {
+    if (!props.users.length) {
+      props.getAllUsers();
+    }
+  }, []);
 
   return (
     <Container classes={['ProfilePage']}>
@@ -18,4 +27,8 @@ function Profile() {
   );
 }
 
-export default Profile;
+const mapStateToProps = (reducers: any) => {
+  return reducers.userReducer;
+};
+
+export default connect(mapStateToProps, { getAllUsers })(Profile);
