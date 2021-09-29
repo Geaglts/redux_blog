@@ -3,8 +3,8 @@ import { ActionType } from '../../types';
 type InitialStateType = { loading: boolean; error: string | null; users: Array<object> };
 
 export enum UserTypes {
-  LOAD = 'LOAD',
-  ERROR = 'ERROR',
+  LOAD = 'LOAD_USERS',
+  ERROR = 'ERROR_USERS',
   GET_USERS = 'GET_USERS',
 }
 

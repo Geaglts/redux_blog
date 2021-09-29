@@ -7,9 +7,9 @@ type InitialStateType = {
 };
 
 export enum PublicationTypes {
-  LOAD = 'LOAD',
-  ERROR = 'ERROR',
-  GET_PUBLICATIONS = 'GET_ALL_PUBLICATIONS',
+  LOAD = 'LOAD_PUBLICATIONS',
+  ERROR = 'ERROR_PUBLICATIONS',
+  GET_PUBLICATIONS = 'GET_PUBLICATIONS',
 }
 
 const INITIAL_STATE: InitialStateType = {
