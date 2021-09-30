@@ -2,18 +2,23 @@ import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import * as usersReducer from '../redux/actions/users';
 import * as publicationsReducer from '../redux/actions/publications';
-// import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Container from '../containers/Container';
 
 import '../styles/pages/Profile.scss';
 
 function Profile(props: any) {
-  // const params: { id: string } = useParams();
+  const params: { id: string } = useParams();
   console.log(props);
-  useEffect(() => {
+  const loadMethods = async () => {
     if (!props.userReducer.users.length) {
-      props.getAllUsers();
+      await props.getAllUsers();
     }
+    props.traerPorUsuario(params.id);
+  };
+
+  useEffect(() => {
+    loadMethods();
   }, []);
 
   return (

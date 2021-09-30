@@ -19,3 +19,11 @@ export const traerTodos = () => async (dispatch: DispatchType) => {
     });
   }
 };
+
+export const traerPorUsuario = (userId: String) => async (dispatch: DispatchType) => {
+  const { data } = await axios.get(
+    `https://jsonplaceholder.typicode.com/posts?userId=${userId}`
+  );
+  console.log(data);
+  dispatch({ type: PublicationTypes.GET_PUBLICATIONS, payload: data });
+};

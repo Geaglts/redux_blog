@@ -21,11 +21,24 @@ const INITIAL_STATE: InitialStateType = {
 function userReducer(state = INITIAL_STATE, action: ActionType) {
   switch (action.type) {
     case PublicationTypes.LOAD:
-      return <InitialStateType>{ ...state, loading: true };
+      return <InitialStateType>{
+        ...state,
+        loading: true,
+        error: null,
+      };
     case PublicationTypes.GET_PUBLICATIONS:
-      return <InitialStateType>{ ...state, loading: false, users: action.payload };
+      return <InitialStateType>{
+        ...state,
+        loading: false,
+        users: action.payload,
+        error: null,
+      };
     case PublicationTypes.ERROR:
-      return <InitialStateType>{ ...state, loading: false, error: action.payload };
+      return <InitialStateType>{
+        ...state,
+        loading: false,
+        error: action.payload,
+      };
     default:
       return state;
   }
